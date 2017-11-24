@@ -1,0 +1,24 @@
+parse_system_homepage:
+    path:     /
+    defaults: { _controller: ParseSystemBundle:Default:index }
+
+parse_system_list:
+    path:     /list
+    defaults: { _controller: ParseSystemBundle:ParseList:list }
+
+parse_system_add:
+    path:     /parse/add
+    defaults: { _controller: ParseSystemBundle:Default:showAddForm }
+
+parse_system_result:
+    path:     /parse/{item}
+    defaults: { _controller: ParseSystemBundle:ParseItem:showItem,item:1 }
+    requirements:
+      item: '\d+'
+
+parse_system_result_detail:
+     path:     /parse/{item}/detail/{format}
+     defaults: { _controller: ParseSystemBundle:ParseItem:showDetail, _format: html }
+     requirements:
+         item: '\d+'
+         format:  html|json

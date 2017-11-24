@@ -1,0 +1,3 @@
+parse_system:
+    resource: "@ParseSystemBundle/Resources/config/routing.yml"
+    prefix:   /
